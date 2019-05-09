@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   var window: UIWindow?
   var drawerController: DrawerController!
   
-  func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+  func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     let leftSideDrawerViewController = ExampleLeftSideDrawerViewController()
     let centerViewController = ExampleCenterTableViewController()
     let rightSideDrawerViewController = ExampleRightSideDrawerViewController()
@@ -63,7 +63,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     return true
   }
   
-  func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+  func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     self.window?.backgroundColor = UIColor.white
     self.window?.makeKeyAndVisible()
     
@@ -78,8 +78,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     return true
   }
   
-  func application(_ application: UIApplication, viewControllerWithRestorationIdentifierPath identifierComponents: [Any], coder: NSCoder) -> UIViewController? {
-    if let key = identifierComponents.last as? String {
+  func application(_ application: UIApplication, viewControllerWithRestorationIdentifierPath identifierComponents: [String], coder: NSCoder) -> UIViewController? {
+    if let key = identifierComponents.last {
       if key == "Drawer" {
         return self.window?.rootViewController
       } else if key == "ExampleCenterNavigationControllerRestorationKey" {
