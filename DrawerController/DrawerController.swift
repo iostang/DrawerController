@@ -171,7 +171,7 @@ private class DrawerCenterContainerView: UIView {
       }
     }
 
-    return nil
+    return hitView
   }
 
   fileprivate func navigationBarContained(withinSubviewsOf view: UIView) -> UINavigationBar? {
